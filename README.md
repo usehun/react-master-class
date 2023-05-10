@@ -63,4 +63,42 @@
     </box>
         <Title></Title> <- 200px
 
+### 타입스크립트 셋업
+
+    Create React App을 타입스크립트로 시작하기
+    npx create-react-app 내 앱 이름 --template typescript
+    npm i --save-dev @types/styled-components
+    npm i styled-components
+
+    기존에 리액트 프로젝트에 타입스크립트를 추가하기
+    1. npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+    2. src 폴더 안에 있던 App.js와 index.js 파일을 App.tsx와 index.tsx 로 바꾼다.
+    3. "npx tsc --init" 명령어로 tsconfig.json 파일 생성한 후, tsconfig.json 파일에 "jsx": "react-jsx"추가
+    -------------------------------------------
+    {
+    "compilerOptions": {
+    ......
+    "jsx": "react-jsx"
+    }
+    }
+    -------------------------------------------
+    4. src/index.tsx에서 수정
+    --------------------------------------------------------------
+    import ReactDOM from "react-dom/client"
+
+    const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+    ---------------------------------------------------------------
+    5. npm i --save-dev @types/styled-components
+
+    6. @types/styled-components 설치할때
+    npm ERR! code ERESOLVE ~~~ 나온다면
+
+    package.json 에 dependencies 에다가
+    "@types/styled-components": "^5.1.15" 추가하고
+    npm install --legacy-peer-deps 입력한다.
+
+    인터페이스 설명
+
 #### 2023-05-08 셋업, 스타일 컴포넌트 설명
+
+#### 2023-05-10 타입스크립트 설치
