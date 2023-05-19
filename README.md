@@ -97,7 +97,35 @@
     "@types/styled-components": "^5.1.15" 추가하고
     npm install --legacy-peer-deps 입력한다.
 
+### state, ES6 설명
+
     인터페이스 설명
+
+    useState < number > ( )
+
+    state의 type을 지정하려면 Generics안에 타입을 지정
+    일반적으로는 초기값을 지정하면 타입스크립트가 자동으로 타입을 유추하기 때문에 굳이 지정해주지 않아도 되지만 상태가 undefined또는 null이 될 수도 있거나 객체 또는 배열일 때는 지정해주는 것이 좋다.
+
+    (ex) const [ value, setValue ] = useState< Value | null >(null);
+
+    ES6 문법 설명
+
+    const {
+        currentTarget: { value },
+    } = event;
+
+    const value = event.currentTarget.value;
+    const tagName = event.currentTarget.tagName;
+    const width = event.currentTarget.width;
+    const id = event.currentTarget.id;
+
+    이거를 이렇게 바꿔 쓸 수 있다.
+
+    const {
+        currentTarget: {value, tagName, width, id}
+    } = event;
+
+#### 2023-05-19 State, ES6 설명
 
 #### 2023-05-08 셋업, 스타일 컴포넌트 설명
 
